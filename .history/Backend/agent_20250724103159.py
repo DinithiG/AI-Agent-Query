@@ -11,8 +11,7 @@ from data_utils import load_sensor_data
 load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 DATA_DIR = os.getenv("DATA_DIR", "./sensor-data")
-MODEL = "gpt-3.5-turbo"
-print(f"Using OpenAI model: {MODEL}")
+MODEL = os.getenv("MODEL_NAME", "gpt-4")
 
 # Field mappings to normalize inconsistent field names
 FIELD_MAPPINGS = {
